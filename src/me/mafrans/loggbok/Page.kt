@@ -1,7 +1,7 @@
 package me.mafrans.loggbok
 
-class Page(index: UShort, volume: Volume?) {
+class Page(index: Int, volume: Volume?) {
     var text: String = "";
-    var index: UShort = index;
+    var index: Int = index;
     val volume: Volume? = volume;
 }
