@@ -39,8 +39,8 @@ class HistoryPageCreatedEntry(author: Author, page: Page) : HistoryEntry(author)
     val id: String = History.makeID()
 
     override fun getMessage(): String {
-        if(page.volume != null) {
-            return "$author created page ${page.index} in ${page.volume.book.title}, Volume ${page.volume.index}"
+        if(page.chapter != null) {
+            return "$author created page ${page.index} in ${page.chapter.book.title}, Volume ${page.chapter.index}"
         }
 
         return "$author created page ${page.index}"
@@ -52,8 +52,8 @@ class HistoryPageEditedEntry(author: Author, page: Page, changeState: TextChange
     val page: Page = page
 
     override fun getMessage(): String {
-        if(page.volume != null) {
-            return "$author edited page ${page.index} in ${page.volume.book.title}, Volume ${page.volume.index}"
+        if(page.chapter != null) {
+            return "$author edited page ${page.index} in ${page.chapter.book.title}, Volume ${page.chapter.index}"
         }
 
         return "$author created page ${page.index}"
