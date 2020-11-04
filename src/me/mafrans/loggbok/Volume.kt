@@ -1,10 +1,7 @@
 package me.mafrans.loggbok
 
-class Volume {
-    var index: UShort = 0u;
+class Volume(index: UShort, book: Book) {
+    var index: UShort = index;
     var pages: Set<Page> = HashSet();
-
-    constructor(index: UShort) {
-        this.index = index;
-    }
+    val book: Book = book;
 }

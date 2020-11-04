@@ -1,3 +1,8 @@
 package me.mafrans.loggbok
 
-class Author {}
+class Author {
+    val name: String;
+    constructor(name: String) {
+        this.name = name;
+    }
+}
