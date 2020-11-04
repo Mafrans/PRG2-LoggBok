@@ -14,7 +14,6 @@ class TextChangeState(val oldText: String, val newText: String) {
             val oldLine = if (oldLines.size > i) oldLines[i] else null
 
             if (newLine != oldLine) {
-                // A change has been made
                 changes.add(LineChange(i, oldLine, newLine))
             }
         }
