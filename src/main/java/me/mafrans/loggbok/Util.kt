@@ -1,5 +1,10 @@
 package me.mafrans.loggbok
 
+import javax.xml.bind.DatatypeConverter
+
+
+
+
 class Util {
     companion object {
         fun toRoman(number: Int): String {
@@ -16,6 +21,14 @@ class Util {
                     .replace("CCCC", "CD")
                     .replace("DD", "M")
                     .replace("DCD", "CM");
+        }
+
+        fun toHexString(array: ByteArray?): String? {
+            return DatatypeConverter.printHexBinary(array)
+        }
+
+        fun toByteArray(s: String?): ByteArray? {
+            return DatatypeConverter.parseHexBinary(s)
         }
     }
 }
