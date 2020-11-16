@@ -3,14 +3,16 @@ package me.mafrans.loggbok
 import java.io.File
 
 fun main() {
-    val model = Model()
-    model.entries += LogEntry(Author("Malte"), "Hurra, ett meddelande!")
-    model.entries += LogEntry(Author("Marcus"), "OwO")
-    model.entries += LogEntry(Author("Malte"), "Hurra, ett meddelande till!")
+    val model = MVCModel();
+    model.entries += LogEntry("Malte", "Test 1")
+    model.entries += LogEntry("Malte", "Test 2")
+    model.entries += LogEntry("Malte", "Test 3")
+    model.entries += LogEntry("Malte", "Test 4")
+    model.entries += LogEntry("Malte", "Test 5")
+    model.entries += LogEntry("Malte", "Test 6")
 
-    val file = File("./test.mod")
-    model.saveToFile(file)
+    model.saveToFile(File("./test.log"))
 
-    val model2 = Model.loadFromFile(file)
-    println(model2.entries)
+    val controller = MVCController(MVCModel(), MVCViewForm());
+    controller.start();
 }

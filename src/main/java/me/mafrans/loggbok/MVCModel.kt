@@ -5,7 +5,7 @@ import kotlinx.serialization.encodeToHexString
 import kotlinx.serialization.protobuf.ProtoBuf
 import java.io.File
 
-class Model() {
+class MVCModel() {
     var entries: List<LogEntry> = ArrayList()
 
     constructor(entries: ArrayList<LogEntry>): this() {
@@ -13,15 +13,15 @@ class Model() {
     }
 
     companion object {
-        fun fromHexString(hex: String): Model {
-            return Model(ProtoBuf.decodeFromHexString(hex))
+        fun fromHexString(hex: String): MVCModel {
+            return MVCModel(ProtoBuf.decodeFromHexString(hex))
         }
 
-        fun loadFromFile(file: File): Model {
+        fun loadFromFile(file: File): MVCModel {
             if(!file.exists()) {
                 throw NoSuchFileException(file);
             }
-            return Model.fromHexString(Util.toHexString(file.readBytes())!!);
+            return fromHexString(Util.toHexString(file.readBytes())!!);
         }
     }
 
