@@ -66,7 +66,7 @@ public class MVCViewForm {
                 chooser.setSelectedFile(new File(System.getProperty("user.home"), "New Logbook.log"));
                 chooser.setDialogTitle("Select a log file");
                 chooser.setDialogType(FileChooseType.SAVE.getId());
-                FileChooseResponse returnType = FileChooseResponse.get(chooser.showOpenDialog(parent));
+                FileChooseResponse returnType = FileChooseResponse.get(chooser.showSaveDialog(parent));
 
                 switch(returnType) {
                     case APPROVE:

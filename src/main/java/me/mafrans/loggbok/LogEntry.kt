@@ -7,7 +7,7 @@ import java.util.*
 
 @Serializable
 class LogEntry(val author: String, var text: String) {
-    public val date = Date().time;
+    val date = FormattedDate(Date().time);
 
     fun getColumns(): Array<LogEntryColumn> {
         return arrayOf(
